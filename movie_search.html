@@ -4,32 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-    
-      <h1>Enter movie details:</h1>
-      <form action="search.php" method="post">
-        Movie Name:<br>
-  <input type="text" name="Movie">
-  <br>
-  Year:<br>
-  <input type="text" name="Release Year">
-  <br>
-  Studio:<br>
- <input type="text" name="Ownership">
- <br>
-  Director:<br>
-  <input type="text" name="Director">
-  <br>
-  
-  </select>
-  <br><br>
-  <button type="submit" name="submit">Submit</button>
-
-      </form>
-    
-
-  </div>
+        <h1>Enter Movie Details:</h1>
+        <form action="search.php" method="post">
+            Movie Name:<br>
+            <input type="text" name="Movie" required>
+            <br>
+            Year:<br>
+            <input type="text" name="ReleaseYear" required>
+            <br>
+            Studio:<br>
+            <input type="text" name="Ownership" required>
+            <br>
+            Director:<br>
+            <input type="text" name="Director" required>
+            <br><br>
+            <button type="submit" name="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
