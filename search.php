@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studio = $_POST["Ownership"];
     $director = $_POST["Director"];
     
-    $sql = "SELECT Movie FROM db WHERE $movie_name LIKE '%$movie_name'";
+    $sql = "SELECT Movie FROM Marvel WHERE $movie_name LIKE '%$movie_name'";
     $conn->query($sql);
 
     exit();
