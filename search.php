@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT Movie, Release Year, Ownership, Director FROM Marvel WHERE $movie_name LIKE '%$movie_name'";
     $conn->query($sql);
 
-    $result = mysqli_query($conn, $sql1);
+    $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
 	    // passing output data of each row to our table structure
