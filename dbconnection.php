@@ -1,8 +1,8 @@
 <?php
 $server = "localhost";
-$username = "rerukul";
-$password = "unsafest insolvency tread";
-$database = "rerukul_db";
+$username = "bshelke";
+$password = "Goodluck@123456";
+$database = "bshelke_db";
 
 
 // Create connection
