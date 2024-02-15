@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'dbconnection.php';
     
     $movie_name = $_POST["Movie"];
-    $year = $_POST["Release Year"];
+    $year = $_POST["ReleaseYear"];
     $studio = $_POST["Ownership"];
     $director = $_POST["Director"];
     
