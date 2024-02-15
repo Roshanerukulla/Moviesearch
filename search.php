@@ -9,25 +9,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studio = $_POST["Ownership"];
     $director = $_POST["Director"];
     
-    $sql = "SELECT Movie, Release Year, Ownership, Director FROM Marvel WHERE $movie_name LIKE '%$movie_name'";
+    $sql = "SELECT Movie, Release Year, Ownership, Director FROM Marvel WHERE Movie LIKE '%$movie_name'";
     $conn->query($sql);
 
     $result = mysqli_query($conn, $sql);
 
+    
     if (mysqli_num_rows($result) > 0) {
-	    // passing output data of each row to our table structure
-	    while($row = mysqli_fetch_assoc($result)) {
-			$html = $html."<tr><td>".$row['Movie']."</td><td>".$row['Release Year']."</td><td>".$row['Ownership']."</td><td>".$row['Director']."</td>
-            ></tr>";
-	    }
-	} else {
-	    echo "No results";
-	}
-	
-	$html=$html."</table></html>";
+        // Initialize HTML table
+        $html = "<html><table border='1'><tr><th>Movie</th><th>Release Year</th><th>Ownership</th><th>Director</th></tr>";
 
-  // Displaying the table
-	echo $html;
+        // Passing output data of each row to the table structure
+        while ($row = mysqli_fetch_assoc($result)) {
+            $html .= "<tr><td>" . $row['Movie'] . "</td><td>" . $row['ReleaseYear'] . "</td><td>" . $row['Ownership'] . "</td><td>" . $row['Director'] . "</td></tr>";
+        }
+
+        // Close the HTML table
+        $html .= "</table></html>";
+        echo $html;
+    } else {
+        echo "No results";
+    }
     exit();
 }
 
