@@ -2,7 +2,7 @@
 $server = "localhost";
 $username = "rerukul";
 $password = "unsafest insolvency tread";
-$database = "rerukuldb";
+$database = "rerukul_db";
 
 
 // Create connection
