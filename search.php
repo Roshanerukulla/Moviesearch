@@ -10,19 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $director = $_POST["Director"];
 
 
-    
-    // $sql = "SELECT Movie, `Release Year`, Ownership, Director FROM `TABLE 6` WHERE 
-    //     (Movie IS NOT NULL AND Movie <> '') OR
-    //     (`Release Year` IS NOT NULL AND `Release Year` <> '') OR
-    //     (Ownership IS NOT NULL AND Ownership <> '') OR
-    //     (Director IS NOT NULL AND Director <> '')";
-
-    // $sql = "SELECT CASE WHEN $movie_name <> '' THEN (SELECT Movie FROM `TABLE 6` WHERE Movie LIKE '%$movie_name%') ELSE '' END  as Movie,
-    //                 CASE WHEN $year <> '' THEN (SELECT `Release Year` FROM `TABLE 6` WHERE `Release Year` LIKE '%$year%') ELSE '' END  as `Release Year`,
-    //                 CASE WHEN $studio <> '' THEN (SELECT Ownership FROM `TABLE 6` WHERE Ownership LIKE '%$studio%') ELSE '' END as Studio,
-    //                 CASE WHEN $director <> '' THEN (SELECT Director FROM `TABLE 6` WHERE Director LIKE '%$director%') ELSE '' END  as Director
-    //                 FROM `TABLE 6`";
-
     $sql = "SELECT * FROM `TABLE 6` WHERE 
     (Movie LIKE '%$movie_name%') AND
     (`Release Year` LIKE '%$year%') AND
