@@ -5,16 +5,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'dbconnection.php';
     
     $movie_name = $_POST["Movie"];
-    $year = $_POST["Release Year"];
+    $year = $_POST["Release_Year"];
     $studio = $_POST["Ownership"];
     $director = $_POST["Director"];
 
 
     $sql = "SELECT * FROM `TABLE 6` WHERE 
     (Movie LIKE '%$movie_name%') AND
-    (`Release Year` LIKE '%$year%') AND
+    (ReleaseYear LIKE '%$year%' ) AND
     (Ownership LIKE '%$studio%') AND
     (Director LIKE '%$director%')";
+
+    
 
     $conn->query($sql);
 
@@ -30,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //     $html .= "<tr><td>" . $row['Movie'] . "</td><td>" . $row['Release Year'] . "</td><td>" . $row['Ownership'] . "</td><td>" . $row['Director'] . "</td></tr>";
         // }
         while ($row = mysqli_fetch_assoc($result)) {
-            $html .= "<tr><td><a href='movie_details.php?movieName=" . urlencode($row['Movie']) . "'>" . $row['Movie'] . "</a></td><td>" . $row['Release Year'] . "</td><td>" . $row['Ownership'] . "</td><td>" . $row['Director'] . "</td></tr>";
+            $html .= "<tr><td><a href='movie_details.php?movieName=" . urlencode($row['Movie']) . "'>" . $row['Movie'] . "</a></td><td>" . $row['ReleaseYear'] . "</td><td>" . $row['Ownership'] . "</td><td>" . $row['Director'] . "</td></tr>";
         }
         // Close the HTML table
         

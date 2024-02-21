@@ -17,7 +17,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<p><strong>Release Date:</strong> " . $row['Release Date'] . "</p>";
     echo "<p><strong>Release Month:</strong> " . $row['Release Month'] . "</p>";
     echo "<p><strong>Release Day:</strong> " . $row['Release Day'] . "</p>";
-    echo "<p><strong>Release Year:</strong> " . $row['Release Year'] . "</p>";
+    echo "<p><strong>Release Year:</strong> " . $row['ReleaseYear'] . "</p>";
     echo "<p><strong>Ownership:</strong> " . $row['Ownership'] . "</p>";
     echo "<p><strong>Director:</strong> " . $row['Director'] . "</p>";
     echo "<p><strong>Domestic Box office Collections:</strong> " . number_format($row['Domestic Box Office'] / 1000000,2) ." millions". "</p>";
