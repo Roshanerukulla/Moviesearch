@@ -1,17 +1,17 @@
 <?php
 include 'dbconnection.php';
 
-// Retrieve movie name from the URL
+// Retrieving movie name from the URL
 $movieName = $_GET["movieName"];
 
-// Query the database to get details of the selected movie
+// Querying the database to get details of the selected movie
 $sql = "SELECT * FROM `TABLE 6` WHERE Movie = '$movieName'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
 
-    // Display detailed information about the selected movie
+    // Displaying detailed information about the selected movie
     echo "<h1>Movie Details</h1>";
     echo "<p><strong>Movie Name:</strong> " . $row['Movie'] . "</p>";
     echo "<p><strong>Release Date:</strong> " . $row['Release Date'] . "</p>";
